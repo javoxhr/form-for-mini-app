@@ -5,20 +5,23 @@ tg.expand()
 tg.MainButton.setText("Отправить")
 tg.MainButton.show()
 
-const InpTitle = document.querySelector('#title')
-const InpDesc = document.querySelector('#desc')
+const InpTitle = document.querySelector('#title').value
+const InpDesc = document.querySelector('#desc').value
 const InpStar = document.querySelector('#star').value
 const category = document.querySelector('#categorys').value
 
-const labelTitle = document.querySelector('.title-label')
-
-let data = {
-    title: InpTitle.value,
-    desc: InpDesc.value,
-    stars: InpStar,
-    category: category
-}
-
 tg.MainButton.onClick(() => {
+    const InpTitle = document.querySelector('#title').value
+    const InpDesc = document.querySelector('#desc').value
+    const InpStar = document.querySelector('#star').value
+    const category = document.querySelector('#categorys').value
+
+    let data = {
+        title: InpTitle,
+        desc: InpDesc,
+        stars: InpStar,
+        category: category
+    }
+    
     tg.sendData(JSON.stringify(data))
 })
