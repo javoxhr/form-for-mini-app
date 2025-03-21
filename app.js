@@ -19,9 +19,9 @@ let data = {
 
 tg.MainButton.onClick(() => {
     if (!InpTitle.length) {
-        InpTitle.classList.add(".validation")
+        InpTitle.style.border = "2px solid red"
         setTimeout(() => {
-            InpTitle.classList.remove(".validation")
+            InpTitle.style.border = "2px solid var(--tg-theme-text-color)"
         }, 2000)
     } else {
         tg.sendData(JSON.stringify(data))
