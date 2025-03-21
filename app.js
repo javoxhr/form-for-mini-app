@@ -41,5 +41,7 @@ tg.MainButton.onClick(() => {
             InpStar.style.border = "2px solid var(--tg-theme-text-color)"
             InpStar.style.color = "var(--tg-theme-text-color)"
         }, 2000)
+    } else {
+        tg.sendData(JSON.stringify(data))
     }
 })
