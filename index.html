@@ -13,9 +13,18 @@
             <div class="main-wrapper">
                 <h1 class="title">Размещение продуктов</h1>
                 <form id="form">
-                    <input type="text" placeholder="Называние" required>
-                    <input type="text" placeholder="Описание" required>
-                    <input type="number" placeholder="Количество звёзды" required>
+                    <div class="inp">
+                        <label for="title">Называние</label>
+                        <input id="title" type="text" required>
+                    </div>
+                    <div class="inp">
+                        <label for="desc">Описание</label>
+                        <input id="desc" type="text" required>
+                    </div>
+                    <div class="inp">
+                        <label for="star">Количество звёзды</label>
+                        <input type="star" required>
+                    </div>
                     <div class="select">
                         <select name="categorys" id="categorys">
                             <option value="Instagram">Instagram</option>
