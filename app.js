@@ -19,9 +19,9 @@ let data = {
 
 tg.MainButton.onClick(() => {
     if (!InpTitle.length) {
-        InpTitle.classList.add("validation")
+        InpTitle.classList.add(".validation")
         setTimeout(() => {
-            InpTitle.classList.remove("validation")
+            InpTitle.classList.remove(".validation")
         }, 2000)
     } else {
         tg.sendData(JSON.stringify(data))
