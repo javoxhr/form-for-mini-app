@@ -14,7 +14,7 @@ async function sendAd() {
     const formData = new FormData();
     formData.append("photo", imageFile);
 
-    const uploadResponse = await fetch("https://api.telegram.org/botYOUR_BOT_TOKEN/sendPhoto", {
+    const uploadResponse = await fetch("https://api.telegram.org/bot8133411753:AAFs7d7oFkSfjZOTeS12MfZT7vWhczQ48Xc/sendPhoto", {
         method: "POST",
         body: formData
     });
