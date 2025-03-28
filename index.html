@@ -1,46 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    
-    <main>
-        <div class="container">
-            <div class="main-wrapper">
-                <h1 class="title">Размещение продуктов</h1>
-                <form id="form">
-                    <div class="inp">
-                        <label class="title-label" for="title">Называние</label>
-                        <input id="title" type="text" required>
-                    </div>
-                    <div class="inp">
-                        <label for="desc">Описание</label>
-                        <input id="desc" type="text" required>
-                    </div>
-                    <div class="inp">
-                        <label for="star">Количество звёзды</label>
-                        <input id="star" type="number" required>
-                    </div>
-                    <div class="select">
-                        <select name="categorys" id="categorys">
-                            <option value="Instagram">Instagram</option>
-                            <option value="Telegram">Telegram</option>
-                            <option value="Youtube">Youtube</option>
-                            <option value="Pubg">Pubg</option>
-                            <option value="Frefire">Frefire</option>
-                            <option value="Other">Другой</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </main>
+
+    <div class="container">
+        <h2>Создать объявление</h2>
+        <input type="text" id="title" placeholder="Название" required>
+        <input type="text" id="description" placeholder="Описание" required>
+        <input type="number" id="price" placeholder="Цена" required>
+        <select id="status">
+            <option value="new">Новый</option>
+            <option value="used">Б/У</option>
+        </select>
+        <input type="file" id="image" class="file-input" accept="image/*" required>
+        <button id="submit">Опубликовать</button>
+    </div>
 
     <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
     <script src="./app.js"></script>
 </body>
+
 </html>
