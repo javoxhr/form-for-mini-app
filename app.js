@@ -12,12 +12,14 @@ async function sendAd() {
 
     // Загружаем изображение в Telegram
     const formData = new FormData();
-    formData.append("photo", imageFile);
-
-    const uploadResponse = await fetch("https://api.telegram.org/bot8133411753:AAFs7d7oFkSfjZOTeS12MfZT7vWhczQ48Xc/sendPhoto", {
+    formData.append("chat_id", "5816401755");  // Вставь ID чата или user_id
+    formData.append("photo", imageFile); // Передаем сам файл
+    
+    const uploadResponse = await fetch(`https://api.telegram.org/bot8133411753:AAFs7d7oFkSfjZOTeS12MfZT7vWhczQ48Xc/sendPhoto`, {
         method: "POST",
         body: formData
     });
+    
 
     const uploadData = await uploadResponse.json();
     if (!uploadData.ok) {
