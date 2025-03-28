@@ -12,7 +12,7 @@ async function sendAd() {
 
     // Загружаем изображение в Telegram
     const formData = new FormData();
-    formData.append("chat_id", "5816401755");  // Вставь ID чата или user_id
+    formData.append("chat_id", "-1002572096308");  // Вставь ID чата или user_id
     formData.append("photo", imageFile); // Передаем сам файл
     
     const uploadResponse = await fetch(`https://api.telegram.org/bot8133411753:AAFs7d7oFkSfjZOTeS12MfZT7vWhczQ48Xc/sendPhoto`, {
@@ -42,3 +42,18 @@ async function sendAd() {
 }
 
 document.getElementById("submit").addEventListener("click", sendAd);
+
+const fileId = "AgACAgIAAxkDAAM0Z-Y-6bvk9R-dNsTs1bl1jdEX7xgAAtfkMRs5YTBL3acJpQSJ3HIBAAMCAAN5AAM2BA";
+fetch(`https://api.telegram.org/bot8133411753:AAFs7d7oFkSfjZOTeS12MfZT7vWhczQ48Xc/getFile?file_id=${fileId}`)
+  .then(response => response.json())
+  .then(data => {
+      if (data.ok) {
+          const filePath = data.result.file_path;
+          const fileUrl = `https://api.telegram.org/file/bot8133411753:AAFs7d7oFkSfjZOTeS12MfZT7vWhczQ48Xc/${filePath}`;
+          document.querySelector('#img').srs = fileUrl
+          console.log("Ссылка на изображение:", fileUrl);
+      } else {
+          console.error("Ошибка получения файла:", data.description);
+      }
+  })
+  .catch(error => console.error("Ошибка запроса:", error));
